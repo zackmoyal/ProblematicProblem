@@ -109,7 +109,7 @@ namespace ProblematicProblem
                 string randomActivity = activities[randomNumber];
 
                 // if wine tasting was chosen and they aren't of age, it will choose again
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if (userAge < 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
@@ -125,11 +125,11 @@ namespace ProblematicProblem
                 // print the activity and ask if it is acceptable, if not, we loop again
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 userAnswer = Console.ReadLine();
-
                 if (userAnswer.ToLower() != "redo")
                 {
                     cont = false;
                 }
+
             } while (cont);
 
             // end main
